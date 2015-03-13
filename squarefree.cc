@@ -24,17 +24,25 @@ void shiftArray(int *temp){
 				}
 
 }
-bool check5squarefree(int number){
+bool checkArrayfor1(int *array){
+				for(int i=0;i<5;i++)if(array[i]==0) return 0;
+				return 1;
+}
+bool check5squarefree(){
 				int *test=new int[5];
 				int resultsArray[5];
 				for(int i=0;i<5;i++)test[i]=i+1;
-				for(int i=0;i<5;i++)resultsArray[i]=0;
+				for(int i=0;i<5;i++)resultsArray[i]=checkSquareFree(i);
 				for(int i=0;i<2000000000;i++){
-
-
+cout<<"testing "<<i<<endl;
+								shiftArray(test);
+								shiftArray(resultsArray);
+								test[5]=i;
+								resultsArray[5]=checkSquareFree(i);
+								if(checkArrayfor1(resultsArray))return 1;
 				}				
+				return 0;
 }
 int main(){
-				cout<<testPrime(2);
-				cout<<checkSquareFree(4);
+				cout<<check5squarefree();
 }
