@@ -18,6 +18,22 @@ bool checkSquareFree(int number){
 
 				return 0;
 }
+void shiftArray(int *temp){
+				for (int i=0;i<5;i++){
+								temp[i]=temp[i+1];
+				}
+
+}
+bool check5squarefree(int number){
+				int *test=new int[5];
+				int resultsArray[5];
+				for(int i=0;i<5;i++)test[i]=i+1;
+				for(int i=0;i<5;i++)resultsArray[i]=0;
+				for(int i=0;i<2000000000;i++){
+
+
+				}				
+}
 int main(){
 				cout<<testPrime(2);
 				cout<<checkSquareFree(4);
